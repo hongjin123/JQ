@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{margin:0;padding: 0;list-style: none;}
+	#img_box{width: 400px;height: 400px;margin:auto;position: relative;overflow: hidden;}
+	#uls{width: 2800px;position: absolute;}
+	#uls li{list-style: none;float: left;}
+	#uls li img{width: 400px;height: 400px;}
+	#down_bg{width: 400px;height: 50px;}
+	.black{width: 400px;height: 50px;background: #000;opacity: 0.5;position: absolute;bottom: 0px;}
+	#ols{position: absolute;bottom: 15px;right: 10px;z-index:99;}
+	#ols li{float: left;width: 20px;height: 20px;border-radius: 10px;background: #fff;text-align: center;line-height: 20px;margin-left: 5px;}
+	#down_bg span{color: #fff;line-height: 50px;font-weight: bold;font-family: "Microsoft YaHei"! important;margin-left: 10px; position: absolute;display: none;}
+	#prev{width: 50px;height: 100px;background: #000;opacity: 0.5;position: absolute;left: 0px;top: 150px;text-align: center;line-height: 100px;font-size: 50px;font-weight: bold;color: #fff;display: none;}
+	#next{width: 50px;height: 100px;background: #000;opacity: 0.5;position: absolute;right: 0px;top: 150px;text-align: center;line-height: 100px;font-size: 50px;font-weight: bold;color: #fff;display: none;}
+	#ols .bg{background: blue;color: red;}
+</style>
+<body>
+	<div id="img_box">
+		<ul id="uls">
+			<li><img src="img/img (1).jpg" alt=""></li>
+			<li><img src="img/img (2).jpg" alt=""></li>
+			<li><img src="img/img (3).jpg" alt=""></li>
+			<li><img src="img/img (4).jpg" alt=""></li>
+			<li><img src="img/img (5).jpg" alt=""></li>
+			<li><img src="img/img (6).jpg" alt=""></li>
+			<li><img src="img/img (7).jpg" alt=""></li>
+		</ul>
+		<div id="down_bg">
+			<p class="black">
+				<span style="display:block">Angle of the morning</span>
+				<span>No love</span>
+				<span>Can't hold us</span>
+				<span>i want shoop baby</span>
+				<span>oh no</span>
+				<span>so bad</span>
+				<span>bad guy</span>
+			</p>
+
+			<ol id="ols">
+				<li class="bg">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+			</ol>
+		</div>
+		<div id="prev"><</div>
+		<div id="next">></div>
+	</div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/sliderFocusPic.js"></script>
+<script>
+	$("#img_box").slider({
+		prev:"#prev",//轮播左键
+		next:"#next",//轮播右键
+		movespeed:500,//滚动速度
+		setspeed:5000,//定时器速度
+		round_f:"#ols",//下标圆的父元素
+		round_s:"li",//下标圆本身元素
+		word_f:".black",//文字的父元素
+		word_s:"span",//文字本身的元素
+		Lyesnot:true,//是否自动轮播
+		LRyesnot:false,//左右按键是否显示，true显示
+		ulss:"#uls",//滚筒图片集合的父元素
+		liss:"li"//滚动图片本身元素
+	})
+</script>
+</html>
